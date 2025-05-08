@@ -1,4 +1,13 @@
 #include "Global_define.h"
+// 初始化光敏電阻參數
+void setupPhoto(){
+  for(int i=0;i<4;i++){
+    threshold[i] = 0;
+    CoinData[i] = 0;
+    CoinActive[i] = 0;
+  }
+
+}
 
 // 讀取光敏電阻，並設定平均值
 void ReadPhoto(){

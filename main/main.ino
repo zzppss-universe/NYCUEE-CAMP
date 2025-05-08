@@ -8,14 +8,11 @@ void setup() {
   Serial.begin(9600);
   setupOLED();
   delay(1000);
+  setupMotor();
+  setupPhoto();
   setupServo();
+  setupButton();
   
-  // 設定按鈕為輸入並啟用內建上拉電阻
-  for (int i = 0; i < buttonCount; i++) {
-    pinMode(buttonPins[i], INPUT_PULLUP);
-  }
-  pinMode(motorPinA , OUTPUT);
-  pinMode(motorPinB , OUTPUT);
   pinMode(ledPin, OUTPUT);
 }
 

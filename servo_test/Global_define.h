@@ -5,7 +5,7 @@
 #define vibrationPin A1
 int servoPins[] = {3, 5, 6, 10};
 bool servoSpeed = 1;
-int servoAngle = 0;
+int servoAngle[] = {0,0,0,0};
 
 // 定義馬達
 #define motorPinB A0 //for digital output
@@ -19,6 +19,7 @@ const int buttonCount = 5;
 
 // 按鈕狀態變數
 bool lastButtonStates[buttonCount] = {false, false, false, false, false};
+bool button_currentValue[buttonCount] = {false, false, false, false, false};
 
 // 光敏腳位 & 數據
 const int photoPins[] = {A2, A3, A6, A7};
