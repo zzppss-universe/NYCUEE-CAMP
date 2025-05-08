@@ -1,7 +1,7 @@
 #include "Global_define.h"
 
 // 讀取光敏電阻，並設定平均值
-void readPhoto(){
+void ReadPhoto(){
   Serial.println("Current :");
   for(int t=0;t<4;t++){
     CoinData[t] = analogRead(photoPins[t]);

@@ -1,13 +1,11 @@
-#include <Wire.h>
 #include "OLED_control.h"
 #include "Servo_control.h"
 #include "Button_read.h"
 #include "Photo_read.h"
-#include "Motor_control.h"
+#include "Motor_control.h" 
 
 void setup() {
   Serial.begin(9600);
-  Wire.begin();
   setupOLED();
   delay(1000);
   setupServo();
@@ -23,14 +21,9 @@ void setup() {
 
 void loop() {
   digitalWrite(ledPin, HIGH);
-  for (int i = 0; i < buttonCount; i++) {
-    bool currentState = !digitalRead(buttonPins[i]); // 按下為 LOW，取反
-    if (currentState && !lastButtonStates[i]) {
-      CoinData[i]++;
-    }
-    lastButtonStates[i] = currentState;
-  }
-  readPhoto();
+
+  ReadButton();
+  ReadPhoto();
   updateMotor();
   updateServo();
   updateOLED();
