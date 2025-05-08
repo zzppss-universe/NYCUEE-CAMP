@@ -9,8 +9,10 @@ bool button_Triggered = 0;
 
 // 伺服馬達初始設定
 void setupServo(){
+  servoSpeed = 1;
   for(int i=0;i<4;i++){
     myServo[i].attach(servoPins[i]);
+    servoAngle[i] = 120;
   }
 }
 
@@ -18,9 +20,9 @@ void setupServo(){
 void calculateServo(){
   if(button_Triggered == 1){
     for(int i=0;i<4;i++)
-      servoAngle[i] += 2 * (servoSpeed - !servoSpeed);
-    if(servoAngle[0] == 60 || servoAngle[0] == 0) //從44轉到0再轉回來，重複
-      servoSpeed = !servoSpeed;
+      servoAngle[i] += 2 * servoSpeed;
+    if(servoAngle[0] == 180 || servoAngle[0] == 120) //從60轉到0再轉回來，重複
+      servoSpeed = -servoSpeed;
     Serial.println(servoAngle[0]);
   }
 }

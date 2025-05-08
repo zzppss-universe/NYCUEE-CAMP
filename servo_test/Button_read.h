@@ -4,6 +4,8 @@
 void setupButton(){
   for (int i = 0; i < buttonCount; i++) {
     pinMode(buttonPins[i], INPUT_PULLUP);
+    lastButtonStates[i] = false;
+    button_currentValue[i] = false;
   }
 }
 
