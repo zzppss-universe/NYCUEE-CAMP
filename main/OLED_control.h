@@ -5,7 +5,6 @@
 // OLED 使用硬體 I2C（節省記憶體的 page buffer 模式）
 U8G2_SSD1306_128X64_NONAME_1_HW_I2C u8g2(U8G2_R0, /* reset=*/U8X8_PIN_NONE);
 
-// 操
 // 外部定義
 
 // OLED初始設定
